@@ -16,15 +16,15 @@ public class WordCountService {
 	@Autowired
 	private WordCountRepository wordCountRepository;
 	
-	public WordCount findWordCount(String word) {
+	public List<String> findWordCount(String word) {
 		
 		List<WordCount> wordInfoList = wordCountRepository.getWordInfoList();
 		
+		List<String> str = new ArrayList<String>();
+		
 		for(WordCount wordCount: wordInfoList){
-			if(wordCount.getWord().contains(word)){
-				return wordCount;
-			}
+			str.add(wordCount.getWord());
 		}
-		return null;
+		return str;
 	}
 }

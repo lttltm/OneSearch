@@ -1,5 +1,7 @@
 package com.lttltm.fans.onesearch.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.lttltm.fans.onesearch.api.model.WordCount;
 import com.lttltm.fans.onesearch.service.WordCountService;
 
 @Controller
@@ -21,7 +22,7 @@ public class SearchController {
 	
 	@RequestMapping(value = "/query", method = RequestMethod.GET)
 	@ResponseBody
-	public WordCount queryString(@RequestParam String query){
+	public List<String> queryString(@RequestParam String query){
 		
 		return wordCountService.findWordCount(query);
 		

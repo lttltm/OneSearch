@@ -1,0 +1,75 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Fans</title>
+  
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+<link href="//cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.theme.min.css"
+	rel="stylesheet">
+<link href="//cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.min.css"
+	rel="stylesheet">
+
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div class="masthead">
+		<ul class="nav nav-pills pull-right">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+		<h3 class="muted">Fans</h3>
+	</div>
+
+	<hr>
+
+
+	<div class="container">
+		<h1>Search</h1>
+		<div class="well">
+			<form action="/search" method="get">
+				 <input type="text" id="query" name="q"/> <input
+					type="submit" value="百度一下">
+			</form>
+		</div>
+
+
+
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$("#query").autocomplete({
+				source : function(request,response){
+					$.ajax({
+						url : "/query" ,
+						dataType : "json" ,
+						data : {
+							query : $("#query").val()
+						},
+						success : function(data){
+							response( $.map( data, function( item ) {
+	                            return {
+	                                value: item
+	                            }
+							}));
+						}
+					
+					});
+				},
+				minLength: 1,
+			});
+		});
+	</script>
+
+</body>
+</html>
