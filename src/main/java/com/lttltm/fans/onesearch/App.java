@@ -1,4 +1,4 @@
-package com.lttltm.fans.OneSearch;
+package com.lttltm.fans.onesearch;
 
 /**
  * Hello world!
