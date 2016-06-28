@@ -1,6 +1,6 @@
 package com.lttltm.fans.onesearch.controller;
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class RecommendController {
 
 	@RequestMapping(value = "/recommend")
 	@ResponseBody
-	public List<String> recommendQuery(@RequestParam String query){
+	public Set<String> recommendQuery(@RequestParam String query){
 		return recommendService.getRecommendList(query);
 	}
 }

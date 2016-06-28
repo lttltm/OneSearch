@@ -1,14 +1,22 @@
 package com.lttltm.fans.onesearch.repository;
 
-import java.util.List;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class RecommendRepository {
+public class RecommendRepository{
 	
+	 @Autowired
+	 private StringRedisTemplate template;
+	 
 	
-	public List<String> getRecommendList(String word) {
-		return null;
+	public Set<String> getRecommendList(String word) {
+		
+		return template.opsForZSet().range(word, 0, 5);
+//		return null;
 	}
 
 }
