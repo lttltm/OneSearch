@@ -9,21 +9,22 @@ import org.springframework.stereotype.Service;
 import com.lttltm.fans.onesearch.api.model.WordCount;
 import com.lttltm.fans.onesearch.repository.WordCountRepository;
 
-
 @Service
-public class WordCountService {
+public class RecommendService {
 	
 	@Autowired
 	private WordCountRepository wordCountRepository;
 	
-	public List<WordCount> findWordCountList(String word){
+	public List<String> getRecommendList(String word) {
 		List<WordCount> wordInfoList = wordCountRepository.getWordInfoList();
-		List<WordCount> resultList = new ArrayList<WordCount>();
+		List<String> list = new ArrayList<String>();
 		for(WordCount wordCount: wordInfoList) {
-			if(wordCount.getWord().contains(word)) {
-				resultList.add(wordCount);
+			if(wordCount.getWord().contains(word)){
+				list.add(wordCount.getWord());
 			}
 		}
-		return resultList;
+		return list;
+		
 	}
+
 }

@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.lttltm.fans.onesearch.api.model.WordCount;
 import com.lttltm.fans.onesearch.service.WordCountService;
 
 @Controller
+@RequestMapping("/api/*")
 public class SearchController {
 	private Logger logger = LoggerFactory.getLogger(SearchController.class);
 	
@@ -22,10 +24,12 @@ public class SearchController {
 	
 	@RequestMapping(value = "/query", method = RequestMethod.GET)
 	@ResponseBody
-	public List<String> queryString(@RequestParam String query){
+	public List<WordCount> queryString(@RequestParam String query){
 		
-		return wordCountService.findWordCount(query);
+		return wordCountService.findWordCountList(query);
 		
 	}
+	
+	
 
 }
