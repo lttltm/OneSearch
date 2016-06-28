@@ -11,7 +11,7 @@ import com.lttltm.fans.onesearch.repository.WordCountRepository;
 
 
 @Service
-public class WordCountService {
+public class SearchService {
 	
 	@Autowired
 	private WordCountRepository wordCountRepository;
