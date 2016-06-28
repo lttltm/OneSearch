@@ -15,6 +15,7 @@ import com.lttltm.fans.onesearch.api.model.WordCount;
 import com.lttltm.fans.onesearch.service.SearchService;
 
 @Controller
+@RequestMapping("/api/*")
 public class SearchController {
 	private Logger logger = LoggerFactory.getLogger(SearchController.class);
 	
