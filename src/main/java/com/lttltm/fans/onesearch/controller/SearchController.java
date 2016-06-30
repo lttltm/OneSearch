@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.lttltm.fans.onesearch.api.model.WordCount;
 import com.lttltm.fans.onesearch.service.SearchService;
+import com.lttltm.fans.onesearch.solr.model.WebContent;
 
 @Controller
 @RequestMapping("/api/*")
@@ -20,13 +19,13 @@ public class SearchController {
 	private Logger logger = LoggerFactory.getLogger(SearchController.class);
 	
 	@Autowired
-	private SearchService wordCountService;
+	private SearchService searchService;
 	
 	@RequestMapping(value = "/query", method = RequestMethod.GET)
 	@ResponseBody
-	public List<WordCount> queryString(@RequestParam String query){
+	public List<WebContent> queryString(@RequestParam String query){
 		
-		return wordCountService.findWordCountList(query);
+		return searchService.findWebByContent(query);
 		
 	}
 
