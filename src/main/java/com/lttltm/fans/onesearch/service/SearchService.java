@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.lttltm.fans.onesearch.api.model.WordCount;
 import com.lttltm.fans.onesearch.repository.WordCountRepository;
+import com.lttltm.fans.onesearch.solr.model.WebContent;
+import com.lttltm.fans.onesearch.solr.repository.WebRepository;
 
 
 @Service
@@ -15,6 +17,8 @@ public class SearchService {
 	
 	@Autowired
 	private WordCountRepository wordCountRepository;
+	@Autowired
+	private WebRepository webRepository;
 	
 	public List<WordCount> findWordCountList(String word){
 		List<WordCount> wordInfoList = wordCountRepository.getWordInfoList();
@@ -25,5 +29,13 @@ public class SearchService {
 			}
 		}
 		return resultList;
+	}
+	
+	public List<WebContent> findWebByKeyWord(String keyword) {
+		return webRepository.findByKeyword(keyword);
+	}
+	
+	public List<WebContent> findWebByContent(String content) {
+		return webRepository.findByContent(content);
 	}
 }
