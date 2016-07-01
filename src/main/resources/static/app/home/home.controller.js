@@ -6,7 +6,7 @@ controller('HomeController',
     function ($scope,$location, $http, queryService) {
 	
 		$scope.submit = function(){
-			queryService.query($scope.query);
+			queryService.set($scope.query);
 			$location.path('/result');
 		}
 		
