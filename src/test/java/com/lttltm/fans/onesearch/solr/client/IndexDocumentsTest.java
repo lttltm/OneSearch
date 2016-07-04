@@ -15,37 +15,37 @@ import com.lttltm.fans.onesearch.Application;
 import com.lttltm.fans.onesearch.service.SearchService;
 import com.lttltm.fans.onesearch.solr.model.WebContent;
 
-@SpringApplicationConfiguration(classes = Application.class)
-@WebAppConfiguration
-@RunWith(SpringJUnit4ClassRunner.class)
-public class IndexDocumentsTest {
-	@Autowired
-	private IndexDocuments index;
-	@Autowired
-	private SearchService searchService;
-	
-	@Test
-	public void testPushDocuments() {
-		
-		try {
-			index.pushDocuments();
-		} catch (SolrServerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	@Test
-	public void testFindWebByKeyWord() {
-		List<WebContent> list = searchService.findWebByKeyWord("测试");
-		System.out.println(list.size() + "-------1");
-		System.out.println(list.toString());
-		
-		list = searchService.findWebByContent("java");
-		System.out.println(list.size() + "-------2");
-		System.out.println(list.toString());
-	}
-}
+//@SpringApplicationConfiguration(classes = Application.class)
+//@WebAppConfiguration
+//@RunWith(SpringJUnit4ClassRunner.class)
+//public class IndexDocumentsTest {
+//	@Autowired
+//	private IndexDocuments index;
+//	@Autowired
+//	private SearchService searchService;
+//	
+////	@Test
+//	public void testPushDocuments() {
+//		
+//		try {
+//			index.pushDocuments();
+//		} catch (SolrServerException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//
+////	@Test
+//	public void testFindWebByKeyWord() {
+//   		List<WebContent> list = searchService.findWebByKeyWord("测试");
+//		System.out.println(list.size() + "-------1");
+//		System.out.println(list.toString());
+//		
+//		list = searchService.findWebByContent("java");
+//		System.out.println(list.size() + "-------2");
+//		System.out.println(list.toString());
+//	}
+//}
