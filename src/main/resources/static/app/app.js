@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('OneSearchApp', ['ngRoute','ui.autocomplete'])
+var app = angular.module('OneSearchApp', ['ngRoute','ui.autocomplete','ng-pagination'])
 
 
 app.config(function($routeProvider){

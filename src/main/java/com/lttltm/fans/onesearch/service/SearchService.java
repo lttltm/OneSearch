@@ -34,8 +34,11 @@ public class SearchService {
 	public Page<Nutch> findByTitleOrUrlOrContent(String query, Pageable pageable) {
 		Page<Nutch> page = nutchRepository.findByTitleOrUrlOrSummary(query, pageable);
 		page.forEach(nutch ->{
-			String summary = nutch.getSummary().substring(0, 200);
-			nutch.setSummary(summary);
+			if(nutch.getSummary().length() > 200){
+				String summary = nutch.getSummary().substring(0, 200);
+				nutch.setSummary(summary);
+			}
+			
 		});
 		return page;
 	}
