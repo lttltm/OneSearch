@@ -12,7 +12,7 @@ controller('HomeController',
 		
 	
 	  function recommend(response,query) {
-		  $http.get("/OneSearch/api/recommend?query="+query)
+		  $http.get("api/recommend?query="+query)
 		  .success(function(data){
 			  response($.map(data, function(item) {
 					return {
