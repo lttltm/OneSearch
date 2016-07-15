@@ -8,9 +8,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.env.Environment;
+
+import com.lttltm.fans.onesearch.config.OneSearchProperties;
 
 
 
@@ -21,6 +24,7 @@ import org.springframework.core.env.Environment;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
+@EnableConfigurationProperties({ OneSearchProperties.class})
 public class Application extends SpringBootServletInitializer {
 	
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
