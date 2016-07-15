@@ -1,4 +1,4 @@
-package com.lttltm.fans.onesearch;
+package com.lttltm.fans.onesearch.config;
 
 import javax.annotation.Resource;
 

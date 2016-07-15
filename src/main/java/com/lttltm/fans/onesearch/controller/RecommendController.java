@@ -20,6 +20,7 @@ public class RecommendController {
 	@RequestMapping(value = "/recommend")
 	@ResponseBody
 	public Set<String> recommendQuery(@RequestParam String query){
+		
 		return recommendService.getRecommendList(query);
 	}
 }

@@ -14,7 +14,7 @@ public class RecommendRepository{
 	 
 	
 	public Set<String> getRecommendList(String word) {
-		
+	
 		return template.opsForZSet().reverseRange(word, 0, 5);
 //		return null;
 	}

@@ -29,14 +29,14 @@ public class SearchController {
 	@RequestMapping(value = "/test/query", method = RequestMethod.GET)
 	@ResponseBody
 	public List<WebContent> queryString(@RequestParam String query){
-		
+		logger.info("query:=" + query);
 		return searchService.findWebByContent(query);
 		
 	}
 	
 	@RequestMapping(value = "/query", method = RequestMethod.GET)
 	@ResponseBody
-	public Page<Nutch> query(@RequestParam String query, @PageableDefault(page = 0, size = 10)Pageable pageable) {
+	public Page<Nutch> query(@RequestParam(required=true) String query, @PageableDefault(page = 0, size = 10)Pageable pageable) {
 		
 		return searchService.findByTitleOrUrlOrContent(query, pageable);
 	}
