@@ -1224,7 +1224,7 @@ h2,
 h3,
 .h3 {
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 h1 small,
 .h1 small,
@@ -1962,16 +1962,8 @@ pre code {
     width: 41.66666667%;
   }
   .col-md-4 {
-    /*width: 33.33333333%;*/
-      width: 23.33333333%;
+    width: 33.33333333%;
   }
-    .col-md-4a {
-        width: 50.33333333%;
-        /*width: 23.33333333%;*/
-    }
-    .col-md-4b {
-        width: 33.33333333%;
-    }
   .col-md-3 {
     width: 25%;
   }
@@ -2092,15 +2084,6 @@ pre code {
   .col-md-offset-2 {
     margin-left: 16.66666667%;
   }
-    .col-md-offset-2a {
-        margin-left: 16.66666667%;
-        margin-top: 5%;
-    }
-    .col-md-offset-2b {
-        /*margin-left: 16.66666667%;*/
-        margin-top: 6%;
-    }
-
   .col-md-offset-1 {
     margin-left: 8.33333333%;
   }
@@ -3018,9 +3001,7 @@ select[multiple].input-lg {
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 3%;
-    margin-top:1.75%;
-    /*margin-bottom: 0;*/
+  margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6019,16 +6000,11 @@ button.close {
 }
 .modal-footer .btn + .btn {
   margin-bottom: 0;
-    /*margin-top: 5px;*/
   margin-left: 5px;
 }
 .modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
 }
-.btn-right{
-    margin-left:65%;
-}
-
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;
 }
